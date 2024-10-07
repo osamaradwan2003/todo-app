@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('tasks', function (Blueprint $table) {
             $table->id(); // primary key
-            $table->string('name', 100); // title column
-            $table->text('is_completed'); // description column
+            $table->string('name', 100);
+            $table->text('is_completed');
             $table->timestamps(); // timestamps for created_at and updated_at
         });
     }
