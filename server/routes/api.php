@@ -19,8 +19,8 @@ use App\Http\Controllers\TaskController;
 // });
 
 Route::controller(TaskController::class)->group(function () {
-    Route::post("tasks", "create");
+    Route::post("task", "create");
     Route::get("tasks", "index");
-    Route::put("tasks/{id}", "update")->where(['id' => '[\d+]']);
-    Route::delete("tasks/{id}", "delete")->where(['id' => '[\d+]']);
+    Route::put("task/{id}", "update")->where(['id' => '[\d+]']);
+    Route::delete("task/{id}", "delete")->where(['id' => '[\d+]']);
 });

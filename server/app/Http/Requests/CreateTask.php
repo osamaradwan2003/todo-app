@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Contracts\Validation\Validator;
+use Illuminate\Http\Exceptions\HttpResponseException;
 
 class CreateTask extends FormRequest
 {
@@ -11,7 +13,7 @@ class CreateTask extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     public function messages() : array {
@@ -40,8 +42,8 @@ class CreateTask extends FormRequest
     public function rules(): array
     {
         return [
-            'name' =>'required|string|max:100',
-            'is_complated' =>'boolean',
+            'name' => 'required|string|max:100',
+            'is_completed' => 'boolean',
         ];
     }
 }
